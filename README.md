@@ -15,4 +15,5 @@ Raspberry Pi 2
 ![alt tag](http://www.area31.net.br/wiki/images/thumb/7/7b/CaseFCX1-area31-versao1.jpg/640px-CaseFCX1-area31-versao1.jpg)
 
 
-#OKokOkOk
+#Licence
+CYBERSI is a open source project. CYBERSI is provided under a BSD license and is available on GitHub for forking and contribution.
