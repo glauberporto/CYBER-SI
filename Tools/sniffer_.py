@@ -1,3 +1,4 @@
+#!/usr/bin/env python2.7
 
 """
 The first part of code > Sniffer CyberSI
@@ -16,6 +17,7 @@ __status__ = "Alpha/Test"
 __url__ = "https://github.com/area31/CYBER-SI"
 
 import	socket
+import os
 
 START = "\x1b["
 GREEN =  "32m"
@@ -33,16 +35,20 @@ UNKNOWN = START+BOLD+YELLOW
 TITLE = START+BOLD+UNDERLINE+PURPLE
 MESSAGE = START+BOLD+BLUE
 
+user = os.getenv("SUDO_USER")
+if user is None:
+    print "This program need 'sudo or be root'"
+    exit()
 
 class SECURE():
     TOTAL_SECURE = 0
     TOTAL_UNSECURE = 0
     TOTAL_UNKNOWN = 0
     content = ""
-    
+
     def __init__(self):
         self.is_root()
-        
+
     def write_header(self):
         sys.stdout.write("%sCyberSI Sniffer%s - %s%s" % (MESSAGE, __version__, __url__, RESET))
         sys.stdout.write("\n\n")
@@ -50,7 +56,7 @@ class SECURE():
         sys.stdout.write("\n\n")
         sys.stdout.write("%sSniffing your Traffic! ...%s" % (SUCCESS, RESET))
         sys.stdout.write("\n\n")
-        
+
     def write_footer(self):
         sys.stdout.write("%s... Done%s" % (SUCCESS, RESET))
         sys.stdout.write("\n\n")
@@ -64,7 +70,7 @@ class SECURE():
         sys.exit(os.EX_NOUSER)
 sniffa = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
 
-#PEGA PACOTES 
+#PEGA PACOTES
 while True:
 	print sniffa.recvfrom(65565)
 

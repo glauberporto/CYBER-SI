@@ -27,9 +27,9 @@ EMAIL CONTENT GOES IN HERE
 server = "192.168.0.100"
 from_address = "John Smith <john.smith@example.com>"
 subject = "New ICT Service Request Website"
- 
+
 addresses = ["John Doe <John.Doe@targetdomain.co.uk>"," Jane Doe <Jane.Doe@targetdomain.co.uk >"]
- 
+
 for to_address in addresses:
 	print "[*] Sending Mail To "+to_address
 	send_mail(server,from_address,to_address,subject)

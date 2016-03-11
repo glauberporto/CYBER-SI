@@ -1,4 +1,6 @@
-#pip install dns 
+#!/usr/bin/env python2.7
+
+#pip install dns
 import  socket
 
 from dns import reversename, resolver

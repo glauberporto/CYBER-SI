@@ -1,3 +1,5 @@
+#!/usr/bin/env python2.7
+
 import socket
 
 addr1 = socket.gethostbyname('google.com')
